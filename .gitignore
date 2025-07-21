@@ -1,0 +1,17 @@
+# Bỏ qua file cấu hình bảo mật và các file không nên đẩy lên git
+.env
+.env.*
+*.user
+*.db
+*.pfx
+*.key
+*.pem
+*.crt
+*.log
+bin/
+obj/
+node_modules/
+.vscode/
+*.suo
+*.userosscache
+*.sln.docstates
