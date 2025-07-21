@@ -81,7 +81,7 @@ namespace ShopNest.Data
             modelBuilder.Entity<ProductImage>(entity =>
             {
                 entity.HasOne(pi => pi.Product)
-                      .WithMany(p => p.Images)
+                      .WithMany(p => p.ProductImages)
                       .HasForeignKey(pi => pi.ProductId)
                       .OnDelete(DeleteBehavior.Cascade);
             });

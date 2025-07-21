@@ -102,3 +102,5 @@ C:\Users\qh208\OneDrive\Desktop\Workspace\ShopNest\obj\Debug\net9.0\ref\ShopNest
 C:\Users\qh208\OneDrive\Desktop\Workspace\ShopNest\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\qh208\OneDrive\Desktop\Workspace\ShopNest\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\qh208\OneDrive\Desktop\Workspace\ShopNest\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\qh208\OneDrive\Desktop\Workspace\ShopNest\obj\Debug\net9.0\ShopNest.sourcelink.json
+C:\Users\qh208\OneDrive\Desktop\Workspace\ShopNest\bin\Debug\net9.0\frontend\package.json

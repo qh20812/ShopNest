@@ -5,6 +5,7 @@ using ShopNest.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -42,6 +43,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Map controllers
+app.MapControllers();
 
 // Thêm route cho trang chủ
 app.MapGet("/", () => "Chào mừng đến với ShopNest API! Truy cập /weatherforecast để xem dự báo thời tiết hoặc /swagger để xem API documentation.");

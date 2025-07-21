@@ -1,0 +1,21 @@
+{
+  "welcome": "Chào mừng đến với ShopNest",
+  "loading": "Đang tải...",
+  "error": "Lỗi",
+  "success": "Thành công",
+  "cancel": "Hủy",
+  "save": "Lưu",
+  "delete": "Xóa",
+  "edit": "Chỉnh sửa",
+  "add": "Thêm",
+  "search": "Tìm kiếm",
+  "filter": "Lọc",
+  "sort": "Sắp xếp",
+  "next": "Tiếp theo",
+  "previous": "Trước",
+  "submit": "Gửi",
+  "close": "Đóng",
+  "confirm": "Xác nhận",
+  "yes": "Có",
+  "no": "Không"
+}

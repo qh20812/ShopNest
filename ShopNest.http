@@ -1,6 +1,195 @@
-@ShopNest_HostAddress = http://localhost:5214
+@ShopNest_HostAddress = http://localhost:5000
 
+### Test trang chủ
+GET {{ShopNest_HostAddress}}/
+Accept: application/json
+
+### Test weather forecast
 GET {{ShopNest_HostAddress}}/weatherforecast/
 Accept: application/json
+
+### Auth APIs
+
+# Đăng ký tài khoản mới
+POST {{ShopNest_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "email": "test@example.com",
+  "password": "password123",
+  "firstName": "Test",
+  "lastName": "User",
+  "phoneNumber": "0123456789",
+  "address": "123 Test Street"
+}
+
+### Đăng nhập
+POST {{ShopNest_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123"
+}
+
+### Đổi mật khẩu
+POST {{ShopNest_HostAddress}}/api/auth/change-password
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "oldPassword": "admin123",
+  "newPassword": "newpassword123"
+}
+
+### Product APIs
+
+# Lấy danh sách sản phẩm
+GET {{ShopNest_HostAddress}}/api/product?page=1&pageSize=10
+Accept: application/json
+
+### Lấy sản phẩm theo ID
+GET {{ShopNest_HostAddress}}/api/product/1
+Accept: application/json
+
+### Tìm kiếm sản phẩm
+GET {{ShopNest_HostAddress}}/api/product?search=iPhone
+Accept: application/json
+
+### Tạo sản phẩm mới
+POST {{ShopNest_HostAddress}}/api/product
+Content-Type: application/json
+
+{
+  "name": "Test Product",
+  "description": "Test product description",
+  "price": 1000000,
+  "discountPrice": 900000,
+  "stockQuantity": 100,
+  "sku": "TEST-001",
+  "categoryId": 2,
+  "brandId": 1,
+  "sellerId": 2
+}
+
+### Cập nhật sản phẩm
+PUT {{ShopNest_HostAddress}}/api/product/1
+Content-Type: application/json
+
+{
+  "name": "Updated Product Name",
+  "description": "Updated description",
+  "price": 1200000,
+  "discountPrice": 1100000,
+  "stockQuantity": 80,
+  "categoryId": 2,
+  "brandId": 1
+}
+
+### Duyệt sản phẩm (Admin)
+POST {{ShopNest_HostAddress}}/api/product/1/approve
+Content-Type: application/json
+
+### Xóa sản phẩm
+DELETE {{ShopNest_HostAddress}}/api/product/1
+
+### Category APIs
+
+# Lấy danh sách danh mục
+GET {{ShopNest_HostAddress}}/api/category
+Accept: application/json
+
+### Lấy danh mục theo ID
+GET {{ShopNest_HostAddress}}/api/category/1
+Accept: application/json
+
+### Tạo danh mục mới
+POST {{ShopNest_HostAddress}}/api/category
+Content-Type: application/json
+
+{
+  "name": "Test Category",
+  "description": "Test category description",
+  "imageUrl": "https://example.com/image.jpg",
+  "parentCategoryId": null
+}
+
+### Cập nhật danh mục
+PUT {{ShopNest_HostAddress}}/api/category/1
+Content-Type: application/json
+
+{
+  "name": "Updated Category",
+  "description": "Updated description",
+  "imageUrl": "https://example.com/new-image.jpg",
+  "parentCategoryId": null
+}
+
+### Xóa danh mục
+DELETE {{ShopNest_HostAddress}}/api/category/1
+
+### Cart APIs
+
+# Lấy giỏ hàng của user
+GET {{ShopNest_HostAddress}}/api/cart/3
+Accept: application/json
+
+### Thêm sản phẩm vào giỏ hàng
+POST {{ShopNest_HostAddress}}/api/cart/add
+Content-Type: application/json
+
+{
+  "userId": 3,
+  "productId": 1,
+  "quantity": 2
+}
+
+### Cập nhật số lượng trong giỏ hàng
+PUT {{ShopNest_HostAddress}}/api/cart/update
+Content-Type: application/json
+
+{
+  "cartItemId": 1,
+  "quantity": 3
+}
+
+### Xóa sản phẩm khỏi giỏ hàng
+DELETE {{ShopNest_HostAddress}}/api/cart/1
+
+### Xóa toàn bộ giỏ hàng
+DELETE {{ShopNest_HostAddress}}/api/cart/clear/3
+
+### Order APIs
+
+# Lấy đơn hàng của user
+GET {{ShopNest_HostAddress}}/api/order/user/3?page=1&pageSize=10
+Accept: application/json
+
+### Lấy chi tiết đơn hàng
+GET {{ShopNest_HostAddress}}/api/order/1
+Accept: application/json
+
+### Tạo đơn hàng từ giỏ hàng
+POST {{ShopNest_HostAddress}}/api/order/create
+Content-Type: application/json
+
+{
+  "customerId": 3,
+  "shippingAddress": "456 Đường XYZ, TP.HCM",
+  "paymentMethod": 1
+}
+
+### Cập nhật trạng thái đơn hàng
+PUT {{ShopNest_HostAddress}}/api/order/1/status
+Content-Type: application/json
+
+{
+  "status": 2
+}
+
+### Hủy đơn hàng
+PUT {{ShopNest_HostAddress}}/api/order/1/cancel
+Content-Type: application/json
 
 ###
